@@ -9,7 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var arr = [10,20,30];
+var arr = [10, 20, 30];
 // Do not edit the code above.
 
 /*
@@ -17,14 +17,15 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
-
+const first = (arr) => {
+  return arr[0]
+}
 
 
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
-var arr = [40,50,60];
+var arr = [40, 50, 60];
 // Do not edit the code above.
 
 /*
@@ -32,8 +33,9 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
-
+const last = (arr) => {
+  return arr[arr.length - 1]
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -47,8 +49,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
-
+const looper = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    alert(arr[i]);
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -62,14 +67,18 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop backwards, starting at the end of the letters array, alerting every item in the array.
 */
 
-//Code Here
+const reversedLooper = (lets) => {
+  for (let i = lets.length - 1; i >= 0; i--) {
+    alert(lets[i]);
+  }
+}
 
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var nums = [1,2,3,6,22,98,45,23,22,12];
+var nums = [1, 2, 3, 6, 22, 98, 45, 23, 22, 12];
 // Do not edit the code above.
 
 /*
@@ -77,8 +86,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return an array that contains the even numbers from the nums array.
 */
 
-//Code Here
-
+const evenFinder = (num) => {
+  let answer = []
+  for (i = 0; i < num.length; i++) {
+    if (num[i] % 2 == 0) {
+      answer.push(num[i]);
+    }
+  }
+  return answer
+}
 
 
 
@@ -97,7 +113,7 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
+var numbersArray = [1, 2, 34, 54, 55, 34, 32, 11, 19, 17, 54, 66, 13];
 // Do not edit the code above.
 
 /*
@@ -106,21 +122,28 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
-
-
-
+const divider = (arr) => {
+  let even = []
+  let odd = []
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 == 0) {
+      even.push(arr[i]);
+    } else if (arr[i] % 2 != 0) {
+      odd.push(arr[i]);
+    }
+  } return [even, odd]
+}
 ////////// PROBLEM 7 //////////
 
 // Do not edit the code below.
-var getRandomArbitrary = function() {
+var getRandomArbitrary = function () {
   return Math.floor(Math.random() * 30);
 };
 // Do not edit the code above.
 
 /* 
   var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-  Above you're given a function (getRandomArbitrary) that will return a random number between 0 and 30.
+  Above you're given a function (getRandomArbitrary) that will return a random number between 0 and .
   There is also a commented out array full of numbers to help you visualize what your function will be receiving.
   Write a function named finder that will take in an array as an argument.
   In the function create a variable called randomNumber and set it to the invocation of getRandomArbitrary.
@@ -128,7 +151,18 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+const finder = (arr) => {
+  let randomNumber = getRandomArbitrary()
+  for (let i = 0; i < arr.length; i++) {
+    if (randomNumber == arr[i]) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+//^^^^^NOT COMPLETED NEED HELP!!!!!!!!!!!!!!!!!!
 
 
 
@@ -157,7 +191,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+const removeItem = (list, item) => {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] == item) {
+      list.slice(item, 0)
+      return list
+    }
+  }
+}
+
+const addItem = (list, item) => {
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] != item) {
+      list.push(item)
+      return list
+    }
+  }
+}
 
 
 
@@ -182,7 +232,7 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Return a new array after adding ten to each item in numbers. 
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
-  
+
 //Code Here
 
 
@@ -194,10 +244,10 @@ var num1 = Math.floor(Math.random() * 30);
 var num2 = Math.floor(Math.random() * 30);
 var arr1 = [];
 var arr2 = [];
-for(var i = 0; i < num1; i++){
+for (var i = 0; i < num1; i++) {
   arr1.push(i);
 }
-for(var i = 0; i < num2; i++){
+for (var i = 0; i < num2; i++) {
   arr2.push(i);
 }
 // Do not edit the code above.
@@ -230,27 +280,27 @@ for(var i = 0; i < num2; i++){
 var devMountainEmployees = [];
 
 var joe = {
-    name: 'Joe',
-    position: 'Instructor',
-    spiritAnimal: 'Honey Badger'
+  name: 'Joe',
+  position: 'Instructor',
+  spiritAnimal: 'Honey Badger'
 };
 
 var cahlan = {
-    name: 'Cahlan',
-    position: 'CEO',
-    spiritAnimal: 'butterfly'
+  name: 'Cahlan',
+  position: 'CEO',
+  spiritAnimal: 'butterfly'
 };
 
 var ryan = {
-    name: 'Ryan',
-    position: 'Marketing',
-    spiritAnimal: 'fox'
+  name: 'Ryan',
+  position: 'Marketing',
+  spiritAnimal: 'fox'
 };
 
 var colt = {
-    name: 'Colt',
-    position: 'Everything really',
-    spiritAnimal: 'Young Male Horse'
+  name: 'Colt',
+  position: 'Everything really',
+  spiritAnimal: 'Young Male Horse'
 };
 // Do not edit the code above.
 
@@ -296,10 +346,10 @@ var colt = {
 
 // Do not edit the code below.
 var user1 = {
-    name: 'Mark McIver',
-    email: 'mark.mciver@devmounta.in',
-    password: 'hunter2',
-    username: 'ihazcode'
+  name: 'Mark McIver',
+  email: 'mark.mciver@devmounta.in',
+  password: 'hunter2',
+  username: 'ihazcode'
 };
 // Do not edit the code above.
 
@@ -308,7 +358,7 @@ var user1 = {
 
 
 /*
-  Now you have a very common data structure. 
+  Now you have a very common data structure.
   Twitter is a good use case.
   It's easy to imagine that your followers list on Twitter is an array full of objects and those objects contain properties about the specific person you follow.
 
